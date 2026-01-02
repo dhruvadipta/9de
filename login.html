@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login • Kenangan 9D</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="login-page ios-style">
+    <!-- Background dengan efek glassmorphism -->
+    <div class="background-blur">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <!-- Container utama iOS Style -->
+    <div class="ios-container">
+        <!-- Header dengan logo -->
+        <div class="ios-header">
+            <div class="logo-container">
+                <div class="ios-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h1 class="ios-title">Kenangan 9D</h1>
+                <p class="ios-subtitle">Memori indah kita bersama</p>
+            </div>
+            
+            <div class="time-display">
+                <span id="currentTime">14:30</span>
+            </div>
+        </div>
+        
+        <!-- Login Card -->
+        <div class="ios-card login-card">
+            <div class="card-header">
+                <h2><i class="fas fa-lock"></i> Masuk ke Memori</h2>
+                <p class="card-subtitle">Gunakan kredensial kelas untuk mengakses kenangan</p>
+            </div>
+            
+            <form id="loginForm" class="ios-form">
+                <div class="form-group ios-input-group">
+                    <div class="input-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <input type="text" id="username" placeholder="Username" class="ios-input" required>
+                </div>
+                
+                <div class="form-group ios-input-group">
+                    <div class="input-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <input type="password" id="password" placeholder="Password" class="ios-input" required>
+                    <button type="button" class="show-password" id="showPasswordBtn">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+                
+                <div class="form-options">
+                    <label class="ios-checkbox">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        Ingat saya
+                    </label>
+                    <a href="#" class="forgot-password">Lupa password?</a>
+                </div>
+                
+                <button type="submit" class="ios-button primary" id="loginButton">
+                    <span class="button-text">Masuk</span>
+                    <i class="fas fa-arrow-right button-icon"></i>
+                </button>
+                
+                <!-- Quick Login Options -->
+                <div class="quick-login">
+                    <p class="quick-login-title">Atau login cepat dengan:</p>
+                    <div class="quick-login-buttons">
+                        <button type="button" class="ios-button outline quick-login-btn" data-username="9D" data-password="kenangan">
+                            <i class="fas fa-users"></i> Akun Kelas
+                        </button>
+                        <button type="button" class="ios-button outline quick-login-btn" data-username="guru" data-password="bimbingan">
+                            <i class="fas fa-chalkboard-teacher"></i> Akun Guru
+                        </button>
+                    </div>
+                </div>
+            </form>
+            
+            <!-- Login Info -->
+            <div class="login-info-box">
+                <div class="info-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <p><strong>Info Login:</strong> Gunakan username: <code>9D</code> dan password: <code>kenangan</code> untuk mencoba demo</p>
+            </div>
+            
+            <!-- Memory Quote -->
+            <div class="memory-quote-card">
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="quote-text">"Kenangan adalah satu-satunya surga yang tidak dapat diambil dari kita."</p>
+                <p class="quote-author">- Kelas 9D, 2024 -</p>
+            </div>
+        </div>
+        
+        <!-- Footer iOS -->
+        <div class="ios-footer">
+            <p>SMP Negeri 1 Kenangan Indah • Tahun Ajaran 2021-2024</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy</a>
+                <span class="divider">•</span>
+                <a href="#" class="footer-link">Terms</a>
+                <span class="divider">•</span>
+                <a href="#" class="footer-link">Contact</a>
+            </div>
+        </div>
+        
+        <!-- Easter Egg Hint -->
+        <div class="easter-egg-hint">
+            <p><i class="fas fa-lightbulb"></i> Tips: Coba ketik "forever9D" di password untuk kejutan!</p>
+        </div>
+    </div>
+    
+    <!-- Audio untuk efek suara -->
+    <audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3" preload="auto"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
