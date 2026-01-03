@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Kenangan SMP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body class="dashboard-page">
+    <div class="background-container">
+        <div class="bg-blur"></div>
+        <div class="bg-image"></div>
+    </div>
+    
+    <!-- Sidebar Navigasi -->
+    <nav class="sidebar glassmorphism">
+        <div class="sidebar-header">
+            <div class="user-profile">
+                <div class="avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="user-info">
+                    <h3 id="currentUser">Alumni SMP</h3>
+                    <p>Kelas 9 • Angkatan 2023/2024</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item active">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="gallery.html" class="menu-item">
+                <i class="fas fa-images"></i>
+                <span>Galeri Kenangan</span>
+            </a>
+            <a href="memories.html" class="menu-item">
+                <i class="fas fa-heart"></i>
+                <span>Kenangan Spesial</span>
+            </a>
+            <a href="classmates.html" class="menu-item">
+                <i class="fas fa-users"></i>
+                <span>Teman Sekelas</span>
+            </a>
+            <a href="about.html" class="menu-item">
+                <i class="fas fa-info-circle"></i>
+                <span>Tentang</span>
+            </a>
+            
+            <div class="menu-divider"></div>
+            
+            <a href="index.html" class="menu-item logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Keluar</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-footer">
+            <p>Kenangan Indah Selamanya</p>
+        </div>
+    </nav>
+    
+    <!-- Konten Utama -->
+    <main class="main-content">
+        <header class="main-header">
+            <h1><i class="fas fa-compass"></i> Dashboard Kenangan</h1>
+            <div class="header-actions">
+                <button id="changeBgBtn" class="header-btn">
+                    <i class="fas fa-image"></i> Ganti Background
+                </button>
+                <button id="changeWelcomeBtn" class="header-btn">
+                    <i class="fas fa-edit"></i> Edit Ucapan
+                </button>
+            </div>
+        </header>
+        
+        <div class="content-container">
+            <!-- Widget Sambutan -->
+            <div class="welcome-widget glassmorphism">
+                <div class="widget-header">
+                    <h2><i class="fas fa-graduation-cap"></i> Selamat Datang di Kenangan SMP Kelas 9</h2>
+                    <p id="welcomeDate"></p>
+                </div>
+                <div class="widget-content">
+                    <div class="welcome-message" id="welcomeMessage">
+                        <p>Halo, <span id="greetingName">Alumni</span>! Selamat datang di website kenangan kita. Di sini kita bisa melihat kembali momen-momen indah selama di SMP kelas 9. Mari kita nostalgia bersama!</p>
+                        <p>Website ini berisi galeri foto, daftar teman sekelas, dan kenangan spesial kita selama masa SMP.</p>
+                    </div>
+                    <div class="welcome-actions">
+                        <button id="editWelcomeBtn" class="btn-primary">
+                            <i class="fas fa-edit"></i> Edit Ucapan
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Widget Statistik -->
+            <div class="stats-widgets">
+                <div class="stat-card glassmorphism">
+                    <div class="stat-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Foto</h3>
+                        <p class="stat-number" id="totalPhotos">24</p>
+                        <p class="stat-desc">Kenangan terabadikan</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card glassmorphism">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Teman Sekelas</h3>
+                        <p class="stat-number" id="totalClassmates">32</p>
+                        <p class="stat-desc">Orang dalam kelas</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card glassmorphism">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Masa SMP</h3>
+                        <p class="stat-number">3</p>
+                        <p class="stat-desc">Tahun bersama</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card glassmorphism">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Kenangan Spesial</h3>
+                        <p class="stat-number" id="totalMemories">12</p>
+                        <p class="stat-desc">Momen tak terlupakan</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Widget Galeri Terbaru -->
+            <div class="recent-gallery glassmorphism">
+                <div class="widget-header">
+                    <h2><i class="fas fa-clock"></i> Foto Terbaru</h2>
+                    <a href="gallery.html" class="view-all">Lihat Semua <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="gallery-preview" id="recentPhotos">
+                    <!-- Foto akan dimuat via JavaScript -->
+                    <div class="preview-item">
+                        <div class="preview-image" style="background-image: url('assets/images/studio/studio1.jpg');"></div>
+                        <p>Foto Studio</p>
+                    </div>
+                    <div class="preview-item">
+                        <div class="preview-image" style="background-image: url('assets/images/kelas/kelas1.jpg');"></div>
+                        <p>Kelas 9A</p>
+                    </div>
+                    <div class="preview-item">
+                        <div class="preview-image" style="background-image: url('assets/images/kegiatan/kegiatan1.jpg');"></div>
+                        <p>Kegiatan Sekolah</p>
+                    </div>
+                    <div class="preview-item">
+                        <div class="preview-image" style="background-image: url('assets/images/studio/studio2.jpg');"></div>
+                        <p>Foto Kelompok</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Widget Kenangan Spesial -->
+            <div class="special-memories glassmorphism">
+                <div class="widget-header">
+                    <h2><i class="fas fa-heart"></i> Kenangan Spesial</h2>
+                    <a href="memories.html" class="view-all">Lihat Semua <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="memories-list" id="specialMemories">
+                    <!-- Kenangan akan dimuat via JavaScript -->
+                    <div class="memory-item">
+                        <div class="memory-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="memory-content">
+                            <h3>Wisuda Kelas 9</h3>
+                            <p>Momen kelulusan dan perpisahan yang penuh haru.</p>
+                            <span class="memory-date">Juni 2024</span>
+                        </div>
+                    </div>
+                    <div class="memory-item">
+                        <div class="memory-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="memory-content">
+                            <h3>Juara Lomba Paskibra</h3>
+                            <p>Kita menjuarai lomba paskibra tingkat kota.</p>
+                            <span class="memory-date">Agustus 2023</span>
+                        </div>
+                    </div>
+                    <div class="memory-item">
+                        <div class="memory-icon">
+                            <i class="fas fa-campground"></i>
+                        </div>
+                        <div class="memory-content">
+                            <h3>Kemah Bersama</h3>
+                            <p>Berkemah di alam bebas selama 3 hari 2 malam.</p>
+                            <span class="memory-date">Oktober 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Modal Edit Ucapan -->
+    <div id="editWelcomeModal" class="modal-overlay">
+        <div class="modal-container glassmorphism">
+            <div class="modal-header">
+                <h2><i class="fas fa-edit"></i> Edit Ucapan Sambutan</h2>
+                <button class="modal-close" id="closeEditModal">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="form-group">
+                    <label for="newWelcomeMessage">Ucapan Sambutan Baru</label>
+                    <textarea id="newWelcomeMessage" rows="6" placeholder="Masukkan ucapan sambutan baru...">Halo, Alumni! Selamat datang di website kenangan kita. Di sini kita bisa melihat kembali momen-momen indah selama di SMP kelas 9. Mari kita nostalgia bersama!
+
+Website ini berisi galeri foto, daftar teman sekelas, dan kenangan spesial kita selama masa SMP.</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="greetingNameInput">Nama untuk Sapaan</label>
+                    <input type="text" id="greetingNameInput" placeholder="Masukkan nama untuk sapaan" value="Alumni">
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="saveWelcomeBtn" class="btn-primary">Simpan Perubahan</button>
+                <button id="cancelEditBtn" class="btn-secondary">Batal</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Ganti Background -->
+    <div id="changeBgModal" class="modal-overlay">
+        <div class="modal-container glassmorphism">
+            <div class="modal-header">
+                <h2><i class="fas fa-image"></i> Ganti Background Dashboard</h2>
+                <button class="modal-close" id="closeBgModal">&times;</button>
+            </div>
+            <div class="modal-content">
+                <p>Pilih background untuk dashboard:</p>
+                <div class="bg-options">
+                    <div class="bg-option" data-bg="class-bg.jpg">
+                        <div class="bg-preview" style="background-image: url('assets/backgrounds/class-bg.jpg');"></div>
+                        <p>Kelas</p>
+                    </div>
+                    <div class="bg-option" data-bg="nature-bg.jpg">
+                        <div class="bg-preview" style="background-image: url('assets/backgrounds/nature-bg.jpg');"></div>
+                        <p>Alam</p>
+                    </div>
+                    <div class="bg-option" data-bg="gradient-bg.jpg">
+                        <div class="bg-preview" style="background-image: url('assets/backgrounds/gradient-bg.jpg');"></div>
+                        <p>Gradient</p>
+                    </div>
+                    <div class="bg-option" data-bg="memory-bg.jpg">
+                        <div class="bg-preview" style="background-image: url('assets/backgrounds/memory-bg.jpg');"></div>
+                        <p>Kenangan</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="customBgUrl">Atau gunakan URL gambar custom:</label>
+                    <input type="text" id="customBgUrl" placeholder="https://example.com/gambar.jpg">
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="saveBgBtn" class="btn-primary">Terapkan Background</button>
+                <button id="cancelBgBtn" class="btn-secondary">Batal</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
