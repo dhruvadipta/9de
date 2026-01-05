@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "username": "siswa",
+      "password": "smptahun2024",
+      "name": "Siswa SMP"
+    },
+    {
+      "username": "guru",
+      "password": "gurukelas9",
+      "name": "Guru Kelas"
+    },
+    {
+      "username": "admin",
+      "password": "admin123",
+      "name": "Admin Kelas"
+    },
+    {
+      "username": "kelas9a",
+      "password": "kelas9a2024",
+      "name": "Kelas 9A"
+    },
+    {
+      "username": "kelas9b",
+      "password": "kelas9b2024",
+      "name": "Kelas 9B"
+    }
+  ]
+}

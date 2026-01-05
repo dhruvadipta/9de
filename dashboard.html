@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Kenangan SMP Kelas 9</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>KENANGAN SMP</h1>
+                    <p>Kelas 9 - Angkatan 2023/2024</p>
+                </div>
+            </div>
+            
+            <div class="user-menu">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="user-name" id="currentUser">Pengguna</span>
+                </div>
+                <button class="logout-btn" id="logoutBtn" title="Keluar">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </header>
+        
+        <main class="dashboard-content">
+            <section class="welcome-section">
+                <div class="welcome-card glass">
+                    <h2 class="welcome-text" id="welcomeText">Welcome DhruvaDipta</h2>
+                    <p class="welcome-subtext">Tempat menyimpan memori indah masa sekolah. Jelajahi galeri, lihat buku tahunan, dan nikmati kenangan bersama.</p>
+                    <button class="edit-btn" id="editWelcomeBtn">
+                        <i class="fas fa-edit"></i> Edit Sambutan
+                    </button>
+                </div>
+            </section>
+            
+            <section class="menu-section">
+                <h2 class="section-title">
+                    <i class="fas fa-th-large"></i> Menu Utama
+                </h2>
+                
+                <div class="menu-grid">
+                    <div class="menu-card glass" onclick="window.location.href='gallery.html'">
+                        <div class="menu-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h3 class="menu-title">Galeri Kenangan</h3>
+                        <p class="menu-desc">Kumpulan foto kenangan sekolah terbaik, terorganisir dalam folder-folder.</p>
+                    </div>
+                    
+                    <div class="menu-card glass" onclick="window.location.href='yearbook.html'">
+                        <div class="menu-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3 class="menu-title">Buku Tahunan</h3>
+                        <p class="menu-desc">Profil siswa, pesan dan kesan, serta cerita selama di SMP.</p>
+                    </div>
+                    
+                    <div class="menu-card glass" onclick="window.location.href='memories.html'">
+                        <div class="menu-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="menu-title">Kenangan Khusus</h3>
+                        <p class="menu-desc">Momen-momen spesial yang tak terlupakan selama sekolah.</p>
+                    </div>
+                    
+                    <div class="menu-card glass" onclick="window.location.href='settings.html'">
+                        <div class="menu-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h3 class="menu-title">Pengaturan</h3>
+                        <p class="menu-desc">Ubah background, edit profil, dan atur preferensi lainnya.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="settings-section">
+                <h2 class="section-title">
+                    <i class="fas fa-image"></i> Background Dashboard
+                </h2>
+                
+                <div class="background-options-grid">
+                    <div class="bg-option active" data-bg="assets/images/backgrounds/default-bg.jpg">
+                        <img src="assets/images/backgrounds/default-bg.jpg" alt="Default">
+                    </div>
+                    <div class="bg-option" data-bg="assets/images/backgrounds/classroom1.jpg">
+                        <img src="assets/images/backgrounds/classroom1.jpg" alt="Kelas 1">
+                    </div>
+                    <div class="bg-option" data-bg="assets/images/backgrounds/classroom2.jpg">
+                        <img src="assets/images/backgrounds/classroom2.jpg" alt="Kelas 2">
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Website Kenangan SMP Kelas 9 &copy; 2024</p>
+            <p>Hanya dapat diakses oleh anggota kelas</p>
+        </footer>
+    </div>
+    
+    <!-- Popup Notifikasi Sosial Media -->
+    <div class="notification-popup" id="socialPopup">
+        <div class="popup-content glass">
+            <div class="popup-header">
+                <h3>Ikuti Kami di Media Sosial</h3>
+                <button class="close-popup" id="closePopup">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="social-grid">
+                <a href="https://instagram.com" target="_blank" class="social-btn instagram">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <span class="social-text">Instagram</span>
+                </a>
+                <a href="https://chat.whatsapp.com" target="_blank" class="social-btn whatsapp">
+                    <div class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <span class="social-text">Grup WhatsApp</span>
+                </a>
+                <a href="https://tiktok.com" target="_blank" class="social-btn tiktok">
+                    <div class="social-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <span class="social-text">TikTok</span>
+                </a>
+                <a href="https://youtube.com" target="_blank" class="social-btn youtube">
+                    <div class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <span class="social-text">YouTube</span>
+                </a>
+                <a href="https://facebook.com" target="_blank" class="social-btn facebook">
+                    <div class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <span class="social-text">Facebook</span>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="social-btn twitter">
+                    <div class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <span class="social-text">Twitter</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/notifications.js"></script>
+    <script>
+        // Inisialisasi dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tampilkan username
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                document.getElementById('currentUser').textContent = currentUser;
+            }
+            
+            // Load welcome text
+            const savedWelcome = localStorage.getItem('welcomeText');
+            if (savedWelcome) {
+                document.getElementById('welcomeText').textContent = savedWelcome;
+            }
+            
+            // Edit welcome text
+            document.getElementById('editWelcomeBtn').addEventListener('click', function() {
+                const currentText = document.getElementById('welcomeText').textContent;
+                const newText = prompt('Edit teks sambutan:', currentText);
+                if (newText && newText.trim() !== '') {
+                    document.getElementById('welcomeText').textContent = newText;
+                    localStorage.setItem('welcomeText', newText);
+                }
+            });
+            
+            // Background selector
+            const bgOptions = document.querySelectorAll('.bg-option');
+            bgOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Hapus kelas active dari semua option
+                    bgOptions.forEach(opt => opt.classList.remove('active'));
+                    
+                    // Tambah kelas active ke option yang diklik
+                    this.classList.add('active');
+                    
+                    // Ubah background body
+                    const bgImage = this.getAttribute('data-bg');
+                    document.body.style.backgroundImage = `url('${bgImage}')`;
+                    localStorage.setItem('dashboardBackground', bgImage);
+                });
+            });
+            
+            // Load saved background
+            const savedBg = localStorage.getItem('dashboardBackground');
+            if (savedBg) {
+                document.body.style.backgroundImage = `url('${savedBg}')`;
+                // Update active thumbnail
+                bgOptions.forEach(option => {
+                    if (option.getAttribute('data-bg') === savedBg) {
+                        option.classList.add('active');
+                    } else {
+                        option.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

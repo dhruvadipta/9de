@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenangan Khusus - SMP Kelas 9</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>KENANGAN KHUSUS</h1>
+                    <p>SMP Kelas 9 - Momen Tak Terlupakan</p>
+                </div>
+            </div>
+            
+            <div class="user-menu">
+                <button class="back-btn" onclick="window.location.href='dashboard.html'" title="Kembali ke Dashboard">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="user-name" id="currentUser">Pengguna</span>
+                </div>
+                <button class="logout-btn" id="logoutBtn" title="Keluar">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </header>
+        
+        <main class="dashboard-content">
+            <section class="welcome-section">
+                <div class="welcome-card glass">
+                    <h2 class="welcome-text">Momen Spesial Tak Terlupakan</h2>
+                    <p class="welcome-subtext">Kenangan-kenangan indah yang hanya terjadi sekali selama di SMP Kelas 9.</p>
+                </div>
+            </section>
+            
+            <section class="menu-section">
+                <h2 class="section-title">
+                    <i class="fas fa-star"></i> Kenangan Spesial
+                </h2>
+                
+                <div class="memories-container">
+                    <!-- Memory 1 -->
+                    <div class="memory-card glass">
+                        <div class="memory-header">
+                            <div class="memory-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="memory-title">
+                                <h3>Juara Lomba Paskibra</h3>
+                                <p class="memory-date">17 Agustus 2023</p>
+                            </div>
+                        </div>
+                        <div class="memory-content">
+                            <p>Kelas 9A meraih juara 1 lomba Paskibra tingkat sekolah. Latihan keras selama 2 bulan membuahkan hasil.</p>
+                            <div class="memory-tags">
+                                <span class="tag">Prestasi</span>
+                                <span class="tag">Kebanggaan</span>
+                                <span class="tag">Kerja Tim</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Memory 2 -->
+                    <div class="memory-card glass">
+                        <div class="memory-header">
+                            <div class="memory-icon">
+                                <i class="fas fa-campground"></i>
+                            </div>
+                            <div class="memory-title">
+                                <h3>Kemah Bersama Kelas 9</h3>
+                                <p class="memory-date">10-12 November 2023</p>
+                            </div>
+                        </div>
+                        <div class="memory-content">
+                            <p>Perkemahan 3 hari 2 malam di Bukit Alam. Api unggun, games seru, dan bonding antar siswa.</p>
+                            <div class="memory-tags">
+                                <span class="tag">Outdoor</span>
+                                <span class="tag">Petualangan</span>
+                                <span class="tag">Persahabatan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Memory 3 -->
+                    <div class="memory-card glass">
+                        <div class="memory-header">
+                            <div class="memory-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <div class="memory-title">
+                                <h3>Pentas Seni Kelas 9</h3>
+                                <p class="memory-date">15 Desember 2023</p>
+                            </div>
+                        </div>
+                        <div class="memory-content">
+                            <p>Pentas seni dengan penampilan terbaik: drama musikal, band kelas, dan dance modern.</p>
+                            <div class="memory-tags">
+                                <span class="tag">Seni</span>
+                                <span class="tag">Kreativitas</span>
+                                <span class="tag">Hiburan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Memory 4 -->
+                    <div class="memory-card glass">
+                        <div class="memory-header">
+                            <div class="memory-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="memory-title">
+                                <h3>Perpisahan dengan Guru Favorit</h3>
+                                <p class="memory-date">20 Mei 2024</p>
+                            </div>
+                        </div>
+                        <div class="memory-content">
+                            <p>Acara perpisahan mengharukan dengan Pak Budi (guru matematika) yang pindah kota.</p>
+                            <div class="memory-tags">
+                                <span class="tag">Haru</span>
+                                <span class="tag">Perpisahan</span>
+                                <span class="tag">Terima Kasih</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Memory 5 -->
+                    <div class="memory-card glass">
+                        <div class="memory-header">
+                            <div class="memory-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="memory-title">
+                                <h3>Pesta Kelas Akhir Tahun</h3>
+                                <p class="memory-date">22 Juni 2024</p>
+                            </div>
+                        </div>
+                        <div class="memory-content">
+                            <p>Pesta makan-makan di rumah salah satu siswa. Masakan buatan sendiri, games seru, dan tukar kado.</p>
+                            <div class="memory-tags">
+                                <span class="tag">Pesta</span>
+                                <span class="tag">Makanan</span>
+                                <span class="tag">Kebersamaan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Memory 6 -->
+                    <div class="memory-card glass">
+                        <div class="memory-header">
+                            <div class="memory-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="memory-title">
+                                <h3>Video Kenangan Kelas</h3>
+                                <p class="memory-date">30 Juni 2024</p>
+                            </div>
+                        </div>
+                        <div class="memory-content">
+                            <p>Video kompilasi 3 tahun perjalanan SMP dari kelas 7 sampai 9. Ditonton bersama di hari terakhir.</p>
+                            <div class="memory-tags">
+                                <span class="tag">Video</span>
+                                <span class="tag">Kompilasi</span>
+                                <span class="tag">Nostalgia</span>
+                            </div>
+                            <button class="watch-btn" onclick="playMemoryVideo()">
+                                <i class="fas fa-play"></i> Tonton Video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Video Modal -->
+            <div class="video-modal glass" id="videoModal" style="display: none;">
+                <div class="modal-header">
+                    <h3>Video Kenangan Kelas 9</h3>
+                    <button class="close-btn" onclick="closeVideoModal()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>Video Kenangan akan ditampilkan di sini</p>
+                        <p class="note">(Pemula bisa mengganti dengan embed YouTube/Vimeo)</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p>Video ini berisi momen-momen terbaik selama 3 tahun di SMP</p>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Kenangan SMP Kelas 9 &copy; 2024</p>
+            <p>Momen spesial yang selalu dikenang</p>
+        </footer>
+    </div>
+    
+    <script src="js/auth.js"></script>
+    <script>
+        // Inisialisasi halaman
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                document.getElementById('currentUser').textContent = currentUser;
+            }
+        });
+        
+        // Fungsi untuk memutar video
+        function playMemoryVideo() {
+            document.getElementById('videoModal').style.display = 'block';
+        }
+        
+        // Fungsi untuk menutup modal video
+        function closeVideoModal() {
+            document.getElementById('videoModal').style.display = 'none';
+        }
+    </script>
+    
+    <style>
+        /* Styling khusus untuk halaman memories */
+        .memories-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .memory-card {
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .memory-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .memory-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .memory-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .memory-icon i {
+            font-size: 22px;
+            color: white;
+        }
+        
+        .memory-title h3 {
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        .memory-date {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+        
+        .memory-content p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .memory-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        
+        .watch-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .watch-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Video Modal */
+        .video-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            z-index: 1000;
+            padding: 0;
+        }
+        
+        .video-modal .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .video-modal .modal-header h3 {
+            font-size: 20px;
+            color: white;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 20px;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .video-container {
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+        }
+        
+        .video-placeholder {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .video-placeholder i {
+            font-size: 60px;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .video-placeholder p {
+            margin-bottom: 10px;
+        }
+        
+        .note {
+            font-size: 12px !important;
+            color: rgba(255, 255, 255, 0.5) !important;
+        }
+        
+        .modal-footer {
+            padding: 15px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .memory-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .video-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</body>
+</html>

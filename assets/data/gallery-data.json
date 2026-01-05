@@ -1,0 +1,150 @@
+{
+  "folders": [
+    {
+      "id": "studio",
+      "name": "Foto Studio",
+      "description": "Foto studio profesional bersama kelas",
+      "icon": "fas fa-camera-retro",
+      "count": 4
+    },
+    {
+      "id": "class",
+      "name": "Foto Kelas", 
+      "description": "Kegiatan sehari-hari di dalam kelas",
+      "icon": "fas fa-school",
+      "count": 3
+    },
+    {
+      "id": "activities",
+      "name": "Kegiatan Sekolah",
+      "description": "Upacara, lomba, dan acara sekolah",
+      "icon": "fas fa-running",
+      "count": 3
+    },
+    {
+      "id": "graduation", 
+      "name": "Wisuda & Perpisahan",
+      "description": "Momen kelulusan dan perpisahan",
+      "icon": "fas fa-graduation-cap",
+      "count": 3
+    }
+  ],
+  
+  "photos": {
+    "studio": [
+      {
+        "id": 1,
+        "filename": "studio1.jpg",
+        "title": "Foto Studio Kelas 9",
+        "date": "15 Maret 2024",
+        "description": "Foto studio resmi kelas 9 di studio profesional",
+        "path": "assets/images/gallery/studio/studio1.jpg"
+      },
+      {
+        "id": 2,
+        "filename": "studio2.jpg", 
+        "title": "Foto dengan Guru Wali",
+        "date": "15 Maret 2024",
+        "description": "Bersama Pak Budi dan Ibu Sari, wali kelas 9A dan 9B",
+        "path": "assets/images/gallery/studio/studio2.jpg"
+      },
+      {
+        "id": 3,
+        "filename": "studio3.jpg",
+        "title": "Foto Perpisahan Studio",
+        "date": "20 Mei 2024", 
+        "description": "Foto studio untuk kenangan perpisahan kelas 9",
+        "path": "assets/images/gallery/studio/studio3.jpg"
+      },
+      {
+        "id": 4,
+        "filename": "studio4.jpg",
+        "title": "Foto Studio Kelompok",
+        "date": "15 Maret 2024",
+        "description": "Foto studio kelompok kecil dengan background modern",
+        "path": "assets/images/gallery/studio/studio4.jpg"
+      }
+    ],
+    
+    "class": [
+      {
+        "id": 5,
+        "filename": "class1.jpg",
+        "title": "Belajar di Kelas",
+        "date": "10 Januari 2024",
+        "description": "Kegiatan belajar matematika di pagi hari",
+        "path": "assets/images/gallery/class/class1.jpg"
+      },
+      {
+        "id": 6,
+        "filename": "class2.jpg",
+        "title": "Presentasi Kelompok",
+        "date": "22 Februari 2024",
+        "description": "Presentasi kelompok IPA tentang ekosistem",
+        "path": "assets/images/gallery/class/class2.jpg"
+      },
+      {
+        "id": 7,
+        "filename": "class3.jpg",
+        "title": "Ujian Semester",
+        "date": "5 Maret 2024",
+        "description": "Suasana ujian semester genap di kelas",
+        "path": "assets/images/gallery/class/class3.jpg"
+      }
+    ],
+    
+    "activities": [
+      {
+        "id": 8,
+        "filename": "activity1.jpg",
+        "title": "Upacara Bendera",
+        "date": "17 Agustus 2023",
+        "description": "Upacara HUT RI ke-78 di lapangan sekolah",
+        "path": "assets/images/gallery/activities/activity1.jpg"
+      },
+      {
+        "id": 9,
+        "filename": "activity2.jpg",
+        "title": "Lomba 17-an",
+        "date": "18 Agustus 2023",
+        "description": "Lomba makan kerupuk saat perayaan 17 Agustusan",
+        "path": "assets/images/gallery/activities/activity2.jpg"
+      },
+      {
+        "id": 10,
+        "filename": "activity3.jpg", 
+        "title": "Peringatan Hari Guru",
+        "date": "25 November 2023",
+        "description": "Persembahan untuk guru-guru tercinta",
+        "path": "assets/images/gallery/activities/activity3.jpg"
+      }
+    ],
+    
+    "graduation": [
+      {
+        "id": 11,
+        "filename": "graduation1.jpg",
+        "title": "Wisuda Kelas 9",
+        "date": "15 Juni 2024",
+        "description": "Acara wisuda dan pelepasan siswa kelas 9",
+        "path": "assets/images/gallery/graduation/graduation1.jpg"
+      },
+      {
+        "id": 12,
+        "filename": "graduation2.jpg",
+        "title": "Serah Terima Raport",
+        "date": "15 Juni 2024",
+        "description": "Penyerahan raport oleh wali kelas",
+        "path": "assets/images/gallery/graduation/graduation2.jpg"
+      },
+      {
+        "id": 13,
+        "filename": "graduation3.jpg",
+        "title": "Foto Bersama setelah Wisuda",
+        "date": "15 Juni 2024",
+        "description": "Momen bahagia setelah acara wisuda selesai",
+        "path": "assets/images/gallery/graduation/graduation3.jpg"
+      }
+    ]
+  }
+}

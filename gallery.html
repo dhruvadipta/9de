@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Kenangan - SMP Kelas 9</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-images"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>GALERI KENANGAN</h1>
+                    <p>SMP Kelas 9 - Angkatan 2023/2024</p>
+                </div>
+            </div>
+            
+            <div class="user-menu">
+                <button class="back-btn" onclick="window.location.href='dashboard.html'" title="Kembali ke Dashboard">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="user-name" id="currentUser">Pengguna</span>
+                </div>
+                <button class="logout-btn" id="logoutBtn" title="Keluar">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </header>
+        
+        <main class="gallery-content">
+            <div class="gallery-header">
+                <h2 class="section-title">
+                    <i class="fas fa-folder"></i> Folder Galeri
+                </h2>
+                <p class="section-subtitle">Pilih folder untuk melihat foto-foto kenangan</p>
+            </div>
+            
+            <!-- Folder Structure -->
+            <div class="folders-container">
+                <div class="folder-grid">
+                    <div class="folder-card glass" data-folder="studio">
+                        <div class="folder-icon">
+                            <i class="fas fa-camera-retro"></i>
+                        </div>
+                        <h3 class="folder-title">Foto Studio</h3>
+                        <p class="folder-count">12 foto</p>
+                        <p class="folder-desc">Foto studio profesional bersama kelas</p>
+                    </div>
+                    
+                    <div class="folder-card glass" data-folder="class">
+                        <div class="folder-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h3 class="folder-title">Foto Kelas</h3>
+                        <p class="folder-count">24 foto</p>
+                        <p class="folder-desc">Kegiatan sehari-hari di dalam kelas</p>
+                    </div>
+                    
+                    <div class="folder-card glass" data-folder="activities">
+                        <div class="folder-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3 class="folder-title">Kegiatan Sekolah</h3>
+                        <p class="folder-count">18 foto</p>
+                        <p class="folder-desc">Upacara, lomba, dan acara sekolah</p>
+                    </div>
+                    
+                    <div class="folder-card glass" data-folder="graduation">
+                        <div class="folder-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="folder-title">Wisuda & Perpisahan</h3>
+                        <p class="folder-count">15 foto</p>
+                        <p class="folder-desc">Momen kelulusan dan perpisahan</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photo Gallery (akan ditampilkan setelah folder dipilih) -->
+            <div class="photos-container" id="photosContainer" style="display: none;">
+                <div class="photos-header">
+                    <button class="back-to-folders" id="backToFolders">
+                        <i class="fas fa-arrow-left"></i> Kembali ke Folder
+                    </button>
+                    <h3 class="photos-title" id="photosTitle"></h3>
+                </div>
+                
+                <div class="photos-grid" id="photosGrid">
+                    <!-- Foto akan dimuat di sini secara dinamis -->
+                </div>
+            </div>
+        </main>
+        
+        <!-- Modal untuk melihat foto -->
+        <div class="modal-overlay" id="photoModal" style="display: none;">
+            <div class="modal-content glass">
+                <div class="modal-header">
+                    <h3 id="modalTitle">Judul Foto</h3>
+                    <button class="close-modal" id="closeModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="Foto">
+                    <div class="photo-info">
+                        <div class="photo-description">
+                            <h4>Deskripsi</h4>
+                            <p id="photoDesc">Deskripsi foto akan muncul di sini.</p>
+                            <button class="edit-desc-btn" id="editDescBtn">
+                                <i class="fas fa-edit"></i> Edit Deskripsi
+                            </button>
+                        </div>
+                        <div class="photo-actions">
+                            <a href="#" class="download-btn" id="downloadBtn" download>
+                                <i class="fas fa-download"></i> Unduh Foto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/auth.js"></script>
+    <script src="js/gallery.js"></script>
+    <script>
+        // Inisialisasi galeri
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tampilkan username
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                document.getElementById('currentUser').textContent = currentUser;
+            }
+            
+            // Load data galeri
+            loadGalleryData();
+        });
+    </script>
+</body>
+</html>

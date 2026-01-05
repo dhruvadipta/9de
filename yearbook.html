@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Tahunan - SMP Kelas 9</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS khusus untuk halaman buku tahunan */
+        .yearbook-content {
+            padding: 0 20px 40px;
+        }
+        
+        .content-section {
+            margin-top: 40px;
+            display: none;
+            animation: fadeInYearbook 0.5s ease;
+        }
+        
+        @keyframes fadeInYearbook {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .back-to-menu {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .back-to-menu:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(-3px);
+        }
+        
+        .section-header h3 {
+            font-size: 24px;
+            font-weight: 500;
+            color: white;
+        }
+        
+        /* Content Cards */
+        .content-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .content-card h4 {
+            font-size: 20px;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Students List */
+        .students-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .student-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .student-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .student-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 24px;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .student-info h5 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .student-info p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Messages Grid */
+        .messages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .message-card {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .message-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .message-content {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        .message-date {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            margin-top: 10px;
+            text-align: right;
+        }
+        
+        /* Stories Grid */
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .story-card {
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .story-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .story-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .story-icon i {
+            font-size: 24px;
+            color: white;
+        }
+        
+        .story-card h5 {
+            font-size: 18px;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .story-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        
+        /* Teachers Grid */
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .teacher-card {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .teacher-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .teacher-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 36px;
+            color: white;
+        }
+        
+        .teacher-card h5 {
+            font-size: 18px;
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        .teacher-subject {
+            color: #667eea;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .teacher-quote {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+            font-style: italic;
+            margin-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 10px;
+        }
+        
+        /* Edit Button */
+        .edit-section-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            border: none;
+        }
+        
+        .edit-section-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .students-list,
+            .messages-grid,
+            .stories-grid,
+            .teachers-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .yearbook-content {
+                padding: 0 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>BUKU TAHUNAN</h1>
+                    <p>SMP Kelas 9 - Angkatan 2023/2024</p>
+                </div>
+            </div>
+            
+            <div class="user-menu">
+                <button class="back-btn" onclick="window.location.href='dashboard.html'" title="Kembali ke Dashboard">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="user-name" id="currentUser">Pengguna</span>
+                </div>
+                <button class="logout-btn" id="logoutBtn" title="Keluar">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </header>
+        
+        <main class="yearbook-content">
+            <section class="welcome-section">
+                <div class="welcome-card glass">
+                    <h2 class="welcome-text">Buku Tahunan Kelas 9</h2>
+                    <p class="welcome-subtext">Kenangan, cerita, dan profil siswa selama 3 tahun di SMP. Selamat menempuh perjalanan baru!</p>
+                </div>
+            </section>
+            
+            <section class="menu-section">
+                <h2 class="section-title">
+                    <i class="fas fa-users"></i> Isi Buku Tahunan
+                </h2>
+                
+                <div class="menu-grid">
+                    <!-- MENU 1: PROFIL SISWA - BISA DIKLIK -->
+                    <div class="menu-card glass" onclick="showSection('profiles')">
+                        <div class="menu-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3 class="menu-title">Profil Siswa</h3>
+                        <p class="menu-desc">Profil lengkap siswa kelas 9A dan 9B dengan foto dan data diri.</p>
+                    </div>
+                    
+                    <!-- MENU 2: PESAN & KESAN - BISA DIKLIK -->
+                    <div class="menu-card glass" onclick="showSection('messages')">
+                        <div class="menu-icon">
+                            <i class="fas fa-comment-alt"></i>
+                        </div>
+                        <h3 class="menu-title">Pesan & Kesan</h3>
+                        <p class="menu-desc">Pesan dan kesan dari siswa, guru, dan wali kelas.</p>
+                    </div>
+                    
+                    <!-- MENU 3: CERITA SERU - BISA DIKLIK -->
+                    <div class="menu-card glass" onclick="showSection('stories')">
+                        <div class="menu-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3 class="menu-title">Cerita Seru</h3>
+                        <p class="menu-desc">Cerita-cerita seru selama 3 tahun di SMP.</p>
+                    </div>
+                    
+                    <!-- MENU 4: GURU & STAFF - BISA DIKLIK -->
+                    <div class="menu-card glass" onclick="showSection('teachers')">
+                        <div class="menu-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3 class="menu-title">Guru & Staff</h3>
+                        <p class="menu-desc">Profil guru-guru dan staff yang mengajar di kelas 9.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ============================================
+                 SECTION 1: PROFIL SISWA - FULL CONTENT
+                 ============================================ -->
+            <section id="profilesSection" class="content-section">
+                <div class="section-header">
+                    <button class="back-to-menu" onclick="hideSections()">
+                        <i class="fas fa-arrow-left"></i> Kembali ke Menu
+                    </button>
+                    <h3>Profil Siswa Kelas 9</h3>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Kelas 9A - 30 Siswa</h4>
+                    <p>Kelas dengan prestasi akademik dan non-akademik terbaik. Dikenal sebagai kelas paling aktif dan kreatif.</p>
+                    
+                    <div class="students-list">
+                        <div class="student-item">
+                            <div class="student-avatar">A</div>
+                            <div class="student-info">
+                                <h5>Andi Wijaya</h5>
+                                <p>Ketua Kelas • Juara Olimpiade Matematika • Basket</p>
+                            </div>
+                        </div>
+                        <div class="student-item">
+                            <div class="student-avatar">B</div>
+                            <div class="student-info">
+                                <h5>Budi Santoso</h5>
+                                <p>Wakil Ketua • Atlet Basket • Klub Science</p>
+                            </div>
+                        </div>
+                        <div class="student-item">
+                            <div class="student-avatar">C</div>
+                            <div class="student-info">
+                                <h5>Citra Dewi</h5>
+                                <p>Sekretaris • Juara Story Telling • Paduan Suara</p>
+                            </div>
+                        </div>
+                        <div class="student-item">
+                            <div class="student-avatar">D</div>
+                            <div class="student-info">
+                                <h5>Dian Pratama</h5>
+                                <p>Bendahara • Editor Video • Fotografi</p>
+                            </div>
+                        </div>
+                        <div class="student-item">
+                            <div class="student-avatar">E</div>
+                            <div class="student-info">
+                                <h5>Eka Putri</h5>
+                                <p>Juara Lomba Menulis • Klub Baca • Paskibra</p>
+                            </div>
+                        </div>
+                        <div class="student-item">
+                            <div class="student-avatar">F</div>
+                            <div class="student-info">
+                                <h5>Fajar Nugroho</h5>
+                                <p>Programmer Muda • Robotika • English Club</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="edit-section-btn" onclick="editSection('profiles')">
+                        <i class="fas fa-edit"></i> Edit Data Siswa
+                    </button>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Kelas 9B - 28 Siswa</h4>
+                    <p>Kelas dengan bakat seni dan olahraga yang menonjol. Sering menjadi juara dalam lomba seni dan olahraga.</p>
+                    
+                    <div class="students-list">
+                        <div class="student-item">
+                            <div class="student-avatar">G</div>
+                            <div class="student-info">
+                                <h5>Gita Maya</h5>
+                                <p>Ketua Kelas • Penari • Klub Seni</p>
+                            </div>
+                        </div>
+                        <div class="student-item">
+                            <div class="student-avatar">H</div>
+                            <div class="student-info">
+                                <h5>Hadi Susanto</h5>
+                                <p>Wakil Ketua • Pemain Futsal • Marching Band</p>
+                            </div>
+                        </div>
+                        <div class="student-item">
+                            <div class="student-avatar">I</div>
+                            <div class="student-info">
+                                <h5>Indah Permata</h5>
+                                <p>Sekretaris • Penyanyi • Klub Bahasa</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="edit-section-btn" onclick="editSection('profiles')">
+                        <i class="fas fa-edit"></i> Edit Data Siswa
+                    </button>
+                </div>
+            </section>
+            
+            <!-- ============================================
+                 SECTION 2: PESAN & KESAN - FULL CONTENT
+                 ============================================ -->
+            <section id="messagesSection" class="content-section">
+                <div class="section-header">
+                    <button class="back-to-menu" onclick="hideSections()">
+                        <i class="fas fa-arrow-left"></i> Kembali ke Menu
+                    </button>
+                    <h3>Pesan & Kesan</h3>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Dari Siswa untuk Kelas 9</h4>
+                    
+                    <div class="messages-grid">
+                        <div class="message-card">
+                            <div class="message-author">
+                                <div class="author-avatar">A</div>
+                                <div>
+                                    <h5>Andi Wijaya</h5>
+                                    <p>Ketua Kelas 9A</p>
+                                </div>
+                            </div>
+                            <p class="message-content">"3 tahun terbaik dalam hidupku! Terima kasih untuk semua kenangan, tawa, dan pelajaran berharga. Sukses selalu untuk kita semua!"</p>
+                            <div class="message-date">15 Juni 2024</div>
+                        </div>
+                        
+                        <div class="message-card">
+                            <div class="message-author">
+                                <div class="author-avatar">G</div>
+                                <div>
+                                    <h5>Gita Maya</h5>
+                                    <p>Ketua Kelas 9B</p>
+                                </div>
+                            </div>
+                            <p class="message-content">"Tidak akan pernah lupa momen pentas seni kita yang spektakuler! Kerja tim kita luar biasa. Terus berkarya di jenjang berikutnya!"</p>
+                            <div class="message-date">15 Juni 2024</div>
+                        </div>
+                        
+                        <div class="message-card">
+                            <div class="message-author">
+                                <div class="author-avatar">F</div>
+                                <div>
+                                    <h5>Fajar Nugroho</h5>
+                                    <p>Anggota Robotika</p>
+                                </div>
+                            </div>
+                            <p class="message-content">"Belajar coding bareng sampai larut malam untuk lomba robotika adalah kenangan terindah. Kita memang tim yang solid!"</p>
+                            <div class="message-date">14 Juni 2024</div>
+                        </div>
+                        
+                        <div class="message-card">
+                            <div class="message-author">
+                                <div class="author-avatar">C</div>
+                                <div>
+                                    <h5>Citra Dewi</h5>
+                                    <p>Juara Story Telling</p>
+                                </div>
+                            </div>
+                            <p class="message-content">"Terima kasih buat semua dukungan ketika aku tampil di lomba story telling. Kalian adalah supporter terbaik!"</p>
+                            <div class="message-date">13 Juni 2024</div>
+                        </div>
+                    </div>
+                    
+                    <button class="edit-section-btn" onclick="editSection('messages')">
+                        <i class="fas fa-edit"></i> Tambah Pesan Baru
+                    </button>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Dari Guru & Wali Kelas</h4>
+                    
+                    <div class="messages-grid">
+                        <div class="message-card">
+                            <div class="message-author">
+                                <div class="author-avatar">BU</div>
+                                <div>
+                                    <h5>Ibu Sari, S.Pd.</h5>
+                                    <p>Wali Kelas 9A</p>
+                                </div>
+                            </div>
+                            <p class="message-content">"Kalian adalah angkatan paling berkesan dalam 10 tahun saya mengajar. Teruslah menjadi pribadi yang rendah hati dan berprestasi!"</p>
+                            <div class="message-date">15 Juni 2024</div>
+                        </div>
+                        
+                        <div class="message-card">
+                            <div class="message-author">
+                                <div class="author-avatar">PA</div>
+                                <div>
+                                    <h5>Pak Budi, M.Pd.</h5>
+                                    <p>Wali Kelas 9B</p>
+                                </div>
+                            </div>
+                            <p class="message-content">"Bangga melihat perkembangan kalian dari kelas 7 sampai 9. Jangan pernah berhenti belajar dan berinovasi!"</p>
+                            <div class="message-date">15 Juni 2024</div>
+                        </div>
+                    </div>
+                    
+                    <button class="edit-section-btn" onclick="editSection('messages')">
+                        <i class="fas fa-edit"></i> Tambah Pesan Baru
+                    </button>
+                </div>
+            </section>
+            
+            <!-- ============================================
+                 SECTION 3: CERITA SERU - FULL CONTENT
+                 ============================================ -->
+            <section id="storiesSection" class="content-section">
+                <div class="section-header">
+                    <button class="back-to-menu" onclick="hideSections()">
+                        <i class="fas fa-arrow-left"></i> Kembali ke Menu
+                    </button>
+                    <h3>Cerita Seru Kelas 9</h3>
+                </div>
+                
+                <div class="stories-grid">
+                    <div class="story-card">
+                        <div class="story-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h5>Juara Robotika Nasional</h5>
+                        <p>Tim robotika kita berhasil meraih juara 2 tingkat nasional setelah berlatih selama 6 bulan. Presentasi final kita membuat juri terkesan!</p>
+                    </div>
+                    
+                    <div class="story-card">
+                        <div class="story-icon">
+                            <i class="fas fa-campground"></i>
+                        </div>
+                        <h5>Kemah di Gunung Lawu</h5>
+                        <p>3 hari 2 malam camping bersama. Api unggun, hiking pagi buta, dan games seru yang bikin kita makin kompak sebagai satu kelas.</p>
+                    </div>
+                    
+                    <div class="story-card">
+                        <div class="story-icon">
+                            <i class="fas fa-theater-masks"></i>
+                        </div>
+                        <h5>Drama Musikal Anti-Bullying</h5>
+                        <p>Pentas drama dengan pesan moral tentang anti-bullying. Kostum dan dekorasi buatan sendiri! Penonton sampai menangis terharu.</p>
+                    </div>
+                    
+                    <div class="story-card">
+                        <div class="story-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h5>Masak Bersama di Rumah Andi</h5>
+                        <p>Acara masak-masak dengan menu dari berbagai daerah Indonesia. Sate Padang buatan Rina jadi favorit semua orang!</p>
+                    </div>
+                    
+                    <div class="story-card">
+                        <div class="story-icon">
+                            <i class="fas fa-basketball-ball"></i>
+                        </div>
+                        <h5>Final Basket vs Alumni</h5>
+                        <p>Pertandingan seru melawan tim alumni. Menang tipis 45-42 di detik-detik terakhir! Andi jadi top scorer dengan 18 points.</p>
+                    </div>
+                    
+                    <div class="story-card">
+                        <div class="story-icon">
+                            <i class="fas fa-microphone-alt"></i>
+                        </div>
+                        <h5>Konser Amal Kelas 9</h5>
+                        <p>Mengumpulkan dana untuk panti asuhan melalui konser musik. Tampil band kelas, solo vocal, dan dance crew. Berhasil kumpulkan 5 juta rupiah!</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <button class="edit-section-btn" onclick="editSection('stories')">
+                        <i class="fas fa-plus-circle"></i> Tambah Cerita Baru
+                    </button>
+                </div>
+            </section>
+            
+            <!-- ============================================
+                 SECTION 4: GURU & STAFF - FULL CONTENT
+                 ============================================ -->
+            <section id="teachersSection" class="content-section">
+                <div class="section-header">
+                    <button class="back-to-menu" onclick="hideSections()">
+                        <i class="fas fa-arrow-left"></i> Kembali ke Menu
+                    </button>
+                    <h3>Guru & Staff Pengajar</h3>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Guru Mata Pelajaran</h4>
+                    
+                    <div class="teachers-grid">
+                        <div class="teacher-card">
+                            <div class="teacher-avatar">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h5>Pak Budi, M.Pd.</h5>
+                            <p class="teacher-subject">Matematika</p>
+                            <p>Wali Kelas 9B</p>
+                            <p class="teacher-quote">"Matematika adalah bahasa universal."</p>
+                        </div>
+                        
+                        <div class="teacher-card">
+                            <div class="teacher-avatar">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h5>Ibu Sari, S.Pd.</h5>
+                            <p class="teacher-subject">Bahasa Indonesia</p>
+                            <p>Wali Kelas 9A</p>
+                            <p class="teacher-quote">"Bacalah, maka dunia akan terbuka."</p>
+                        </div>
+                        
+                        <div class="teacher-card">
+                            <div class="teacher-avatar">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h5>Pak Agus, S.Pd.</h5>
+                            <p class="teacher-subject">IPA (Fisika)</p>
+                            <p>Ketua Lab IPA</p>
+                            <p class="teacher-quote">"Eksperimen adalah guru terbaik."</p>
+                        </div>
+                        
+                        <div class="teacher-card">
+                            <div class="teacher-avatar">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h5>Ibu Dewi, S.Pd.</h5>
+                            <p class="teacher-subject">IPA (Biologi)</p>
+                            <p>Pembina Klub Science</p>
+                            <p class="teacher-quote">"Alam adalah laboratorium terbesar."</p>
+                        </div>
+                        
+                        <div class="teacher-card">
+                            <div class="teacher-avatar">
+                                <i class="fas fa-globe-asia"></i>
+                            </div>
+                            <h5>Pak Joko, S.Pd.</h5>
+                            <p class="teacher-subject">IPS</p>
+                            <p>Pembina Klub Debat</p>
+                            <p class="teacher-quote">"Sejarah mengajarkan kita bijak."</p>
+                        </div>
+                        
+                        <div class="teacher-card">
+                            <div class="teacher-avatar">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <h5>Ibu Lisa, S.Pd.</h5>
+                            <p class="teacher-subject">Bahasa Inggris</p>
+                            <p>Pembina English Club</p>
+                            <p class="teacher-quote">"Practice makes perfect!"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <h4>Staff & Administrasi</h4>
+                    
+                    <div class="teachers-grid">
+                        <div class="teacher-card">
+                            <div class="teacher-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h5>Pak Ahmad, S.Pd., M.Pd.</h5>
+                            <p class="teacher-subject">Kepala Sekolah</p>
+                            <p>25 tahun pengalaman</p>
+                        </div>
+                        
+                        <div class="teacher-card">
+                            <div class="teacher-avatar">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h5>Ibu Maya, S.Pd.</h5>
+                            <p class="teacher-subject">Wakil Kepala Sekolah</p>
+                            <p>Bidang Kesiswaan</p>
+                        </div>
+                        
+                        <div class="teacher-card">
+                            <div class="teacher-avatar">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <h5>Bu Tini</h5>
+                            <p class="teacher-subject">Tata Usaha</p>
+                            <p>15 tahun mengabdi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <button class="edit-section-btn" onclick="editSection('teachers')">
+                        <i class="fas fa-edit"></i> Edit Data Guru
+                    </button>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Buku Tahunan SMP Kelas 9 &copy; 2024</p>
+            <p>Kenangan indah selama di SMP</p>
+        </footer>
+    </div>
+    
+    <script src="js/auth.js"></script>
+    <script>
+        // Fungsi untuk menampilkan section (SEMUA 4 MENU BISA DIKLIK)
+        function showSection(sectionId) {
+            // Sembunyikan semua section
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Tampilkan section yang dipilih
+            const selectedSection = document.getElementById(sectionId + 'Section');
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+                
+                // Scroll ke atas section
+                selectedSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        
+        // Fungsi untuk kembali ke menu utama
+        function hideSections() {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Scroll kembali ke menu
+            document.querySelector('.menu-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Fungsi edit section (untuk semua section)
+        function editSection(sectionType) {
+            let message = '';
+            
+            switch(sectionType) {
+                case 'profiles':
+                    message = 'Edit data siswa. Fitur ini memungkinkan Anda menambah, mengedit, atau menghapus profil siswa.';
+                    break;
+                case 'messages':
+                    message = 'Tambah pesan baru. Anda bisa menulis pesan dan kesan untuk ditambahkan ke buku tahunan.';
+                    break;
+                case 'stories':
+                    message = 'Tambah cerita baru. Bagikan cerita seru selama di SMP untuk diingat bersama.';
+                    break;
+                case 'teachers':
+                    message = 'Edit data guru. Update informasi guru dan staff yang mengajar di kelas 9.';
+                    break;
+                default:
+                    message = 'Edit konten buku tahunan.';
+            }
+            
+            alert('Fitur Edit: ' + message + '\n\n(Pemula bisa langsung edit di file HTML atau hubungi admin untuk akses edit lanjutan)');
+        }
+        
+        // Inisialisasi halaman
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                document.getElementById('currentUser').textContent = currentUser;
+            }
+            
+            // Setup logout button
+            const logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    if (confirm('Yakin ingin keluar?')) {
+                        localStorage.removeItem('isLoggedIn');
+                        localStorage.removeItem('currentUser');
+                        localStorage.removeItem('currentUsername');
+                        window.location.href = 'index.html';
+                    }
+                });
+            }
+            
+            // Setup menu cards hover effect
+            const menuCards = document.querySelectorAll('.menu-card');
+            menuCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.background = 'rgba(255, 255, 255, 0.15)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.background = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
